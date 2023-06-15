@@ -9,7 +9,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
 
 import com.cdc.rce.clientes.beans.Cliente;
-import com.cdc.rce.clientes.beans.GenericDao;
+import com.cdc.rce.clientes.dao.GenericDao;
 import com.cdc.rce.clientes.dao.IClienteDao;
 import com.cdc.rce.clientes.mappers.ClienteMapper;
 

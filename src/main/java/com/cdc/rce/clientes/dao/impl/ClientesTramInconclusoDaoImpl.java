@@ -1,7 +1,7 @@
 package com.cdc.rce.clientes.dao.impl;
 
 import com.cdc.rce.clientes.beans.Cliente;
-import com.cdc.rce.clientes.beans.GenericDao;
+import com.cdc.rce.clientes.dao.GenericDao;
 import com.cdc.rce.clientes.dao.IClientesTramInconclusoDao;
 import com.cdc.rce.clientes.mappers.ClientesTramiteInconclusoMapper;
 import oracle.jdbc.OracleTypes;

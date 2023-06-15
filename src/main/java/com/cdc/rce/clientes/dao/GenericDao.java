@@ -1,4 +1,4 @@
-package com.cdc.rce.clientes.beans;
+package com.cdc.rce.clientes.dao;
 
 import javax.annotation.PostConstruct;
 import javax.sql.DataSource;
