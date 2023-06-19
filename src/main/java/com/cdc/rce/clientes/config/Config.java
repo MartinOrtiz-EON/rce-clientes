@@ -53,15 +53,4 @@ public class Config {
 		jdbcTemplate.setDataSource(dataSource());
 		return jdbcTemplate;
 	}
-
-	/**
-	 * Devuelve la instancia de RestTemplate.
-	 * 
-	 * @return Instancia RestTemplate.
-	 */
-	@Bean
-	@Qualifier("Standard")
-	public RestTemplate restTemplate() {
-		return new RestTemplate();
-	}
 }

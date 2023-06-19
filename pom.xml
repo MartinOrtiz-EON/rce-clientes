@@ -133,6 +133,15 @@
 			<artifactId>thymeleaf-spring5</artifactId> <!-- thymeleaf -->
 			<version>3.0.14.RELEASE</version> <!-- 3.0.11.RELEASE -->
 		</dependency>
+		
+		<!-- Core -->
+		<!-- Hash 5f8bc736bbd9468c212d18d66f785f3707841723 -->
+
+		<dependency>
+			<groupId>com.cdc</groupId>
+			<artifactId>ServiciosCore</artifactId>
+			<version>0.1.0</version>
+		</dependency>
 
 	</dependencies>
 
@@ -157,6 +166,13 @@
 				<email.contact>Usuario</email.contact>
 				<email.app>bloqueo</email.app>
 				<email.id.alert>1</email.id.alert>
+				
+				<db.schema>CDC</db.schema>
+				
+				<!-- Tramite de RCE terminado -->
+				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
+				
+				
 			</properties>
 		</profile>
 		<profile>
@@ -180,7 +196,10 @@
 				<email.id.alert>1</email.id.alert>
 
 				<db.schema>CDC</db.schema>
-
+				
+				<!-- Tramite de RCE terminado -->
+				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
+				
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
 				<db.tram.inc.sp>CDC_SP_CONSULTA_CONTACTOS_RCE_INCONCLUSOS</db.tram.inc.sp>
@@ -208,6 +227,9 @@
 
 
 				<db.schema>CDC</db.schema>
+				
+				<!-- Tramite de RCE terminado -->
+				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
 
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
@@ -235,6 +257,9 @@
 				<email.id.alert>1</email.id.alert>
 
 				<db.schema>CDC</db.schema>
+				
+				<!-- Tramite de RCE terminado -->
+				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
 
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
@@ -262,6 +287,9 @@
 				<email.id.alert>1</email.id.alert>
 
 				<db.schema>CDC</db.schema>
+				
+				<!-- Tramite de RCE terminado -->
+				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
 
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.SqlOutParameter;
 import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,13 @@ import com.cdc.rce.clientes.mappers.ClienteMapper;
 import oracle.jdbc.OracleTypes;
 
 @Repository
-public class ClienteDaoImpl extends GenericDao implements IClienteDao{
+public class ClienteDaoImpl extends GenericDao implements IClienteDao {
+
+	@Value("${db.schema}")
+	private String SCHEMA;
+
+	@Value("${db.tram.inc.sp}")
+	private String SP_CLIENTES_RCE;
 
 	@Override
 	public List<Cliente> getDatosCliente() {
@@ -24,8 +31,8 @@ public class ClienteDaoImpl extends GenericDao implements IClienteDao{
 
 		try {
 			SimpleJdbcCall jdbcCall = new SimpleJdbcCall(getDataSource())
-					.withSchemaName("CDC")
-					.withProcedureName("CCSP_LISTA_CLIENTES_RCE_200OK")
+					.withSchemaName(SCHEMA)
+					.withProcedureName(SP_CLIENTES_RCE)
 					.declareParameters(
 							new SqlOutParameter("OUT_DATOS_CLIENTE", OracleTypes.CURSOR, new ClienteMapper()),
 							new SqlOutParameter("OUT_ERROR", OracleTypes.VARCHAR));
@@ -38,9 +45,8 @@ public class ClienteDaoImpl extends GenericDao implements IClienteDao{
 			List<Cliente> outDatosCliente = (List<Cliente>) map.get("OUT_DATOS_CLIENTE");
 
 			if (error == null && !outDatosCliente.isEmpty()) {
-			    datosCliente = outDatosCliente;
+				datosCliente = outDatosCliente;
 			}
-			
 
 		} catch (Exception o) {
 			o.printStackTrace();
