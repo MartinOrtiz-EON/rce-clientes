@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jndi.JndiObjectFactoryBean;
+import org.springframework.web.client.RestTemplate;
 
 @Configuration
 public class Config {
@@ -52,4 +53,14 @@ public class Config {
 		jdbcTemplate.setDataSource(dataSource());
 		return jdbcTemplate;
 	}
+	
+	 /**
+     * Devuelve la instancia de RestTemplate.
+     * @return Instancia RestTemplate.
+     */
+    @Bean
+    @Qualifier("Standard")
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
+    }
 }
