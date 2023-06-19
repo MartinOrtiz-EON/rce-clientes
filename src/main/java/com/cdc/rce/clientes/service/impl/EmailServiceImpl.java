@@ -6,6 +6,7 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.MailException;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
@@ -23,11 +24,16 @@ public class EmailServiceImpl implements IEmailService {
 	@Autowired
 	private NotificacionesImpl mailSender;
 
-	private String EMAIL_SENDER = "id_cdc@circulodecredito.com.mx";
-	private String CONTACTO = "API";
-	private String APP = "API";
-	private String EMAIL_ALERT = "1";
-	private String EMAIL_URL = "http://10.77.41.46:7003/notificaciones/emailNotification";
+	@Value("${email.sender}")
+	private String EMAIL_SENDER;
+	@Value("${email.contact}")
+	private String CONTACTO;
+	@Value("${email.app}")
+	private String APP;
+	@Value("${email.id.alert}")
+	private String EMAIL_ALERT;
+	@Value("${email.url}")
+	private String EMAIL_URL;
 	
 	private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 	

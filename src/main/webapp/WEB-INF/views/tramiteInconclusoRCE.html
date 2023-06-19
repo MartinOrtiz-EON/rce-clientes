@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+   <style>
+      body {
+         background-color: #f2f2f2;
+         font-family: Arial, sans-serif;
+      }
+      .container {
+         max-width: 600px;
+         margin: 0 auto;
+         padding: 20px;
+         background-color: #ffffff;
+         border: 1px solid #dddddd;
+      }
+      .header {
+         background-color: #33babb;
+         color: #ffff66;
+         padding: 20px;
+         text-align: center;
+      }
+      .content {
+         padding: 20px;
+      }
+   </style>
+</head>
+<body>
+   <div class="container">
+      <div class="header">
+         <h1>Tramite Inconcluso</h1>
+      </div>
+      <div class="content">
+         <p>Hola, <span th:text="${nombre}">nombre</span></p>
+         <p>Hemos detectado que cuenta con un tramite inconcluso</p>
+      </div>
+   </div>
+</body>
+</html>

@@ -187,12 +187,13 @@
 				<cron.expression.notificar.vencimiento>0 30 12 * * *</cron.expression.notificar.vencimiento>
 				<cron.expression.notificar.vencimiento.proximo>0 40 12 * * *</cron.expression.notificar.vencimiento.proximo>
 				<cron.expression.notificar.mensual>0 50 12 * * *</cron.expression.notificar.mensual>
-				<email.sender>avisame@circulodecredito.com.mx</email.sender>
+
+				<email.sender>id_cdc@circulodecredito.com.mx</email.sender>
 				<email.personal>Bloquea tu Expediente</email.personal>
 				<email.charset>ISO-8859-1</email.charset>
 				<email.url>http://desarrollo:7007/notificaciones/emailNotification</email.url>
-				<email.contact>Usuario</email.contact>
-				<email.app>Bloqueo Expediente</email.app>
+				<email.contact>API</email.contact>
+				<email.app>API</email.app>
 				<email.id.alert>1</email.id.alert>
 
 				<db.schema>CDC</db.schema>
@@ -203,6 +204,10 @@
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
 				<db.tram.inc.sp>CDC_SP_CONSULTA_CONTACTOS_RCE_INCONCLUSOS</db.tram.inc.sp>
+				<cron.expression.notificar.tram.inc>0 15 14 * * *</cron.expression.notificar.tram.inc>
+				<email.tramite.inconcluso.asunto>Tramite Inconcluso RCE</email.tramite.inconcluso.asunto>
+				<email.tramite.inconcluso.plantilla>tramiteInconclusoRCE.html</email.tramite.inconcluso.plantilla>
+
 			</properties>
 		</profile>
 		<profile>
@@ -216,15 +221,14 @@
 				<jndi.name>creditoDatasource</jndi.name>
 				<cron.expression.notificar.vencimiento>0 * * * * *</cron.expression.notificar.vencimiento>
 				<cron.expression.notificar.vencimiento.proximo>0 * * * * *</cron.expression.notificar.vencimiento.proximo>
-				<cron.expression.notificar.mensual>0 50 12 * * *</cron.expression.notificar.mensual>
-				<email.sender>no_reply@circulodecredito.com.mx</email.sender>
+
+				<email.sender>id_cdc@circulodecredito.com.mx</email.sender>
 				<email.personal>Bloquea tu Expediente</email.personal>
 				<email.charset>ISO-8859-1</email.charset>
-				<email.url>http://10.50.0.46:7003/notificaciones/emailNotification</email.url>
-				<email.contact>Usuario</email.contact>
-				<email.app>Bloqueo</email.app>
+				<email.url>http://10.77.41.46:7003/notificaciones/emailNotification</email.url>
+				<email.contact>API</email.contact>
+				<email.app>API</email.app>
 				<email.id.alert>1</email.id.alert>
-
 
 				<db.schema>CDC</db.schema>
 				
@@ -234,6 +238,10 @@
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
 				<db.tram.inc.sp>CDC_SP_CONSULTA_CONTACTOS_RCE_INCONCLUSOS</db.tram.inc.sp>
+				<cron.expression.notificar.tram.inc>0 15 14 * * *</cron.expression.notificar.tram.inc>
+				<email.tramite.inconcluso.asunto>Tramite Inconcluso RCE</email.tramite.inconcluso.asunto>
+				<email.tramite.inconcluso.plantilla>tramiteInconclusoRCE.html</email.tramite.inconcluso.plantilla>
+
 			</properties>
 		</profile>
 		<profile>
