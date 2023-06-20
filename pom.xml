@@ -225,7 +225,7 @@
 				<email.sender>id_cdc@circulodecredito.com.mx</email.sender>
 				<email.personal>Bloquea tu Expediente</email.personal>
 				<email.charset>ISO-8859-1</email.charset>
-				<email.url>http://10.77.41.46:7003/notificaciones/emailNotification</email.url>
+				<email.url>http://10.50.0.46:7003/notificaciones/emailNotification</email.url>
 				<email.contact>API</email.contact>
 				<email.app>API</email.app>
 				<email.id.alert>1</email.id.alert>
@@ -234,14 +234,14 @@
 				
 				<!-- Tramite de RCE terminado -->
 				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
-				<cron.clientes.rce>0 40 14 * * *</cron.clientes.rce>
+				<cron.clientes.rce>0 0 */4 ? * *</cron.clientes.rce>
 				<email.asunto.clientes.rce>Promociones RCE</email.asunto.clientes.rce>
 				<email.plantilla.clientes.rce>rce-cliente.html</email.plantilla.clientes.rce>
 
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
 				<db.tram.inc.sp>CDC_SP_CONSULTA_CONTACTOS_RCE_INCONCLUSOS</db.tram.inc.sp>
-				<cron.expression.notificar.tram.inc>0 40 14 * * *</cron.expression.notificar.tram.inc>
+				<cron.expression.notificar.tram.inc>0 0 */4 ? * *</cron.expression.notificar.tram.inc>
 				<email.tramite.inconcluso.asunto>Tramite Inconcluso RCE</email.tramite.inconcluso.asunto>
 				<email.tramite.inconcluso.plantilla>tramiteInconclusoRCE.html</email.tramite.inconcluso.plantilla>
 

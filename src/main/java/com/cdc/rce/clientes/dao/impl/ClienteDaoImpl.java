@@ -22,7 +22,7 @@ public class ClienteDaoImpl extends GenericDao implements IClienteDao {
 	@Value("${db.schema}")
 	private String SCHEMA;
 
-	@Value("${db.tram.inc.sp}")
+	@Value("${db.sp.clientes.rce}")
 	private String SP_CLIENTES_RCE;
 
 	@Override

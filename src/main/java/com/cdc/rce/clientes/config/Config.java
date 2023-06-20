@@ -59,7 +59,7 @@ public class Config {
      * @return Instancia RestTemplate.
      */
     @Bean
-    @Qualifier("Standard")
+    @Qualifier("standard")
     public RestTemplate restTemplate() {
         return new RestTemplate();
     }
