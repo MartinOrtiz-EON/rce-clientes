@@ -184,10 +184,7 @@
 				<authentication.by.token.method>/validarToken</authentication.by.token.method>
 				<authentication.new.ldap>1</authentication.new.ldap>
 				<jndi.name>jdbc/ccredito</jndi.name>
-				<cron.expression.notificar.vencimiento>0 30 12 * * *</cron.expression.notificar.vencimiento>
-				<cron.expression.notificar.vencimiento.proximo>0 40 12 * * *</cron.expression.notificar.vencimiento.proximo>
-				<cron.expression.notificar.mensual>0 50 12 * * *</cron.expression.notificar.mensual>
-
+				
 				<email.sender>id_cdc@circulodecredito.com.mx</email.sender>
 				<email.personal>Bloquea tu Expediente</email.personal>
 				<email.charset>ISO-8859-1</email.charset>
@@ -200,6 +197,9 @@
 				
 				<!-- Tramite de RCE terminado -->
 				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
+				<cron.clientes.rce>0 0 11 * * *</cron.clientes.rce>
+				<email.asunto.clientes.rce>Promociones RCE</email.asunto.clientes.rce>
+				<email.plantilla.clientes.rce>rce-cliente.html</email.plantilla.clientes.rce>
 				
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
@@ -219,9 +219,7 @@
 				<authentication.by.token.method>/validarToken</authentication.by.token.method>
 				<authentication.new.ldap>1</authentication.new.ldap>
 				<jndi.name>creditoDatasource</jndi.name>
-				<cron.expression.notificar.vencimiento>0 * * * * *</cron.expression.notificar.vencimiento>
-				<cron.expression.notificar.vencimiento.proximo>0 * * * * *</cron.expression.notificar.vencimiento.proximo>
-
+				
 				<email.sender>id_cdc@circulodecredito.com.mx</email.sender>
 				<email.personal>Bloquea tu Expediente</email.personal>
 				<email.charset>ISO-8859-1</email.charset>
@@ -234,14 +232,14 @@
 				
 				<!-- Tramite de RCE terminado -->
 				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
-				<cron.clientes.rce>0 0 */4 ? * *</cron.clientes.rce>
+				<cron.clientes.rce>0 0 11 * * *</cron.clientes.rce>
 				<email.asunto.clientes.rce>Promociones RCE</email.asunto.clientes.rce>
 				<email.plantilla.clientes.rce>rce-cliente.html</email.plantilla.clientes.rce>
 
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>
 				<db.tram.inc.sp>CDC_SP_CONSULTA_CONTACTOS_RCE_INCONCLUSOS</db.tram.inc.sp>
-				<cron.expression.notificar.tram.inc>0 0 */4 ? * *</cron.expression.notificar.tram.inc>
+				<cron.expression.notificar.tram.inc>0 0 */4 * * *</cron.expression.notificar.tram.inc>
 				<email.tramite.inconcluso.asunto>Tramite Inconcluso RCE</email.tramite.inconcluso.asunto>
 				<email.tramite.inconcluso.plantilla>tramiteInconclusoRCE.html</email.tramite.inconcluso.plantilla>
 
@@ -271,6 +269,9 @@
 				
 				<!-- Tramite de RCE terminado -->
 				<db.sp.clientes.rce>CCSP_LISTA_CLIENTES_RCE_200OK</db.sp.clientes.rce>
+				<cron.clientes.rce>0 0 11 * * *</cron.clientes.rce>
+				<email.asunto.clientes.rce>Promociones RCE</email.asunto.clientes.rce>
+				<email.plantilla.clientes.rce>rce-cliente.html</email.plantilla.clientes.rce>
 
 				<!-- Tramites Inconclusos-->
 				<db.tram.inc.package>CDC_PG_CONSULTA_RCE</db.tram.inc.package>

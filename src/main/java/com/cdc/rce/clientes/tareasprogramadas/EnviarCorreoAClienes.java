@@ -5,6 +5,9 @@ import java.util.List;
 
 import com.cdc.rce.clientes.service.IClienteService;
 import com.cdc.rce.clientes.service.IClientesTramIncService;
+
+import org.apache.logging.log4j.LogManager;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.EnableScheduling;
@@ -18,6 +21,8 @@ import com.cdc.rce.clientes.service.IEmailService;
 @EnableScheduling
 public class EnviarCorreoAClienes {
 
+	private static final Logger logger = (Logger) LogManager.getLogger(EnviarCorreoAClienes.class);
+	
 	@Autowired
 	private IEmailService emailService;
 
@@ -31,7 +36,7 @@ public class EnviarCorreoAClienes {
 	private String asuntoClienteRCE;
 
 	@Value("${email.plantilla.clientes.rce}")
-	private String plantillaClienteRCE = "rce-cliente.html";
+	private String plantillaClienteRCE;
 
 	// Todos los dias a las 08:00 a.m.
 	@Scheduled(cron = "${cron.clientes.rce}")
@@ -52,13 +57,13 @@ public class EnviarCorreoAClienes {
 						emailService.enviarEmail(cliente.getEmail(), cliente.getNombre(), asuntoClienteRCE,
 								plantillaClienteRCE);
 					} catch (Exception e) {
-						e.printStackTrace();
+						logger.warn("Ocurrio un error al momento de mandar el email");
 					}
 				}
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			logger.warn("Ocurrio un error al momento de obtener la lista de clientes RCE");
 		}
 
 	}
@@ -77,7 +82,7 @@ public class EnviarCorreoAClienes {
 			List<Cliente> lstClientes = new ArrayList<>();
 			Cliente cliente1 = new Cliente("RAMON CRUZ DE LA CRUZ", "ramon.cruz@eon.com.mx");
 			Cliente cliente2 = new Cliente("RAMON CRUZ", "ramon_cruz92@hotmail.com");
-
+			
 			lstClientes.add(cliente1);
 			lstClientes.add(cliente2);
 
@@ -87,11 +92,13 @@ public class EnviarCorreoAClienes {
 						emailService.enviarEmail(cliente.getEmail(), cliente.getNombre(), asuntoTramIncRCE,
 								plantillaTramIncRCE);
 					} catch (Exception e) {
+						logger.warn("Ocurrio un error al momento de mandar el email");
 						e.printStackTrace();
 					}
 				}
 			}
 		} catch (Exception e) {
+			logger.warn("Ocurrio un error al momento de obtener la lista de clientes RCE tramite inconcluso");
 			e.printStackTrace();
 		}
 	}

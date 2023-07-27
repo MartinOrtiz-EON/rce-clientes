@@ -35,7 +35,7 @@ public class ClienteController {
 	private String asuntoClienteRCE;
 
 	@Value("${email.plantilla.clientes.rce}")
-	private String plantillaClienteRCE = "rce-cliente.html";
+	private String plantillaClienteRCE;
 
 	
 	@PostMapping("/listar")

@@ -44,8 +44,10 @@ public class ClienteDaoImpl extends GenericDao implements IClienteDao {
 			@SuppressWarnings("unchecked")
 			List<Cliente> outDatosCliente = (List<Cliente>) map.get("OUT_DATOS_CLIENTE");
 
-			if (error == null && !outDatosCliente.isEmpty()) {
+			if (error == null) {
 				datosCliente = outDatosCliente;
+			}else {
+				logger.error("Error al obtener los datos de la Base de Datos.");
 			}
 
 		} catch (Exception o) {
